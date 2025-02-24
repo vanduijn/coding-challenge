@@ -90,6 +90,7 @@ class OcRatesConvert extends LitElement {
 
     #onAmountChange(event) {
         this.amount = parseFloat(event.target.value);
+        this.#resetConvertedAmount();
     }
 
     #onFromCurrencyChange(event) {
