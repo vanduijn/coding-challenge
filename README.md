@@ -10,7 +10,7 @@ This project contains a Currency Conversion API and a web client for interacting
 ## Project Structure
 
 - `server/`: Contains the Currency Conversion API built with Node.js and Express.
-- `web/`: Contains the web client built with React.
+- `web/`: Contains the web client built with Lit.
 
 ## Setup Instructions
 
