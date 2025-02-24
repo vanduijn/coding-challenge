@@ -15,10 +15,15 @@ class RatesService {
     }
 
     /**
-     * Retrieves exchange rates for a given base currency.
-     * @param {string} baseCurrency - The base currency for which to retrieve exchange rates.
-     * @returns {Promise<Object>} The exchange rates data.
-     * @throws {Error} If there is an error fetching the rates.
+     * Fetches exchange rates for a given base currency.
+     * 
+     * This method first checks if the rates are available in the cache. If cached rates are found,
+     * they are returned immediately. Otherwise, it fetches the rates from the Fixer API, caches them,
+     * and then returns the fetched rates.
+     * 
+     * @param {string} baseCurrency - The base currency for which to fetch exchange rates.
+     * @returns {Promise<Object>} A promise that resolves to an object containing exchange rates.
+     * @throws {Error} If there is an error fetching the rates from the Fixer API.
      */
     async getRates(baseCurrency) {
         const cacheKey = this.#generateCacheKey(baseCurrency);

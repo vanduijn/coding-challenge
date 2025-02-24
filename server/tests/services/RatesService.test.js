@@ -30,7 +30,7 @@ describe('RatesService', () => {
 
     it('should fetch rates from API if not cached', async () => {
         const baseCurrency = 'EUR';
-        const apiRates = { rates: { USD: 1.2 } };
+        const apiRates = { rates: { USD: 1.2 }, success: true };
         cacheServiceMock.get.returns(null);
         fixerApiMock.getRates.resolves(apiRates);
 
